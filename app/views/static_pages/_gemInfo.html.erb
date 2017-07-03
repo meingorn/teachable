@@ -1,5 +1,12 @@
-<h5> Gem name goes here ERB ★ </h5>
-<h5>INFORMATION</h5>
-<h5>description goes here ERB</h5>
-<h5>Dependencies</h5>
-<h5>loop through dependencies here erb ★ </h5>
+<div class="results">
+  <% if @search_gem %>
+  <a href="https://rubygems.org/gems/<%= @search_gem.first["name"] %> id="searchedGem"> <%= @search_gem.first["name"] %> </a> <br/>
+  <h5>INFORMATION</h5>
+  <%= @search_gem.first["info"] %>
+  <h5>DEPENDENCIES</h5>
+      dependencies <br/>
+  <% else %>
+  <%= 'NO GEMS' %>
+  <% end %>
+
+</div>

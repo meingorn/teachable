@@ -2,7 +2,17 @@
 <div class="searchPage">
   <h2>Search Gems</h2>
   <div class="searchBar">
-    <input type="text" name="seach" placeholder="Search" class="round" />
-    <input type="submit" class="corner" value=""/>
+    <%= form_tag(searches_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search", class: "round" %>
+      <%= submit_tag "Search", class: "corner", value: "" %>
+    <% end %>
   </div>
 </div>
+
+<% if @search_gem %>
+  <% if @search_gem.length > 1 %>
+    <%= render "gemInfo" %>
+  <% else %>
+    <%= render "noGems" %>
+  <% end %>
+<% end  %>
