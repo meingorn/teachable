@@ -1,12 +1,15 @@
 class StaticPagesController < ApplicationController
 
   def root
-    @result = params[:search]
-    if @result
+    if !!params[:search]
+      @result = params[:search]
       @search_gem = Gems.search @result
-    else
-      nil
-    end
+      @name = @search_gem.first["name"]
+      @info = @search_gem.first["info"]
+      @dependencies = @search_gem.first["dependencies"]["development"]
+      else
+        nil
+      end
   end
 
   def favorites

@@ -1,12 +1,18 @@
 <div class="results">
   <% if @search_gem %>
-  <a href="https://rubygems.org/gems/<%= @search_gem.first["name"] %> id="searchedGem"> <%= @search_gem.first["name"] %> </a> <br/>
-  <h5>INFORMATION</h5>
-  <%= @search_gem.first["info"] %>
-  <h5>DEPENDENCIES</h5>
-      dependencies <br/>
-  <% else %>
-  <%= 'NO GEMS' %>
+  <div class="gemBio">
+  <ul class="searchList">
+    <li><a href="https://rubygems.org/gems/<%= @name%>" id="<%= @name%>" class="searchList"> <%= @name %> </a>
+    </li>
+    </ul>
+    <h5>INFORMATION</h5>
+    <h6> <%= @info %> </h6>
+    <h5>DEPENDENCIES</h5>
+    <ul class="searchList">
+      <% @dependencies.each do |d| %>
+      <li><a> <%= d["name"] %> </a></li>
+      <% end  %>
+    </ul>
+  </div>
   <% end %>
-
 </div>

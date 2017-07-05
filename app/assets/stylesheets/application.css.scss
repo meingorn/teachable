@@ -17,16 +17,20 @@
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
 
+ * {
+   font-family: 'Open Sans', sans-serif;
+ }
+
 //Side Navbar
  .sidenav {
      height: 100%;
      width: 30%;
      position: fixed;
-     z-index: 1; /* Stay on top */
+     z-index: 1;
      top: 0;
      left: 0;
      background-image: url("map.png");
-     overflow-x: hidden; /* Disable horizontal scroll */
+     overflow-x: hidden; 
      padding-top: 30px;
      text-align: right;
  }
@@ -38,27 +42,31 @@
      font-size: 25px;
      color: white;
      display: block;
-     transition: 0.3s
+
  }
 
  .navpages {
    padding-top: 50%;
  }
+ //
+ // .sidenav a:hover, .offcanvas a:focus{
+ //     color: #65c2e6;
+ //     background: rgba(255,255,255,0.5);
+ //     width: 40%;
+ //     position: absolute;
+ //     right: 0px;
+ // }
 
- .sidenav a:hover, .offcanvas a:focus{
-     color: #65c2e6;
- }
-
-//Seach page main content
+//Seach page main content//
 
  .searchPage {
    margin-left: 33%;
-   padding: 20% 0% 0% 5%;
+   padding: 10% 0% 0% 5%;
  }
 
  .round {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 30px;
     border: 1px lightgrey solid;
     padding: 5px 5px 5px 25px;
     position: absolute;
@@ -69,14 +77,15 @@
 
 .corner {
     position: absolute;
-    top: 3px;
+    top: 25px;
     left: 95%;
-    height: 20px;
+    height: 10px;
     width: 20px;
     z-index: 10;
     border-radius: 10px;
     border: none;
     background: url("magnifying-glass.png");
+    background-repeat: no-repeat;
 }
 
 .searchBar {
@@ -84,8 +93,80 @@
     width: 70%;
 }
 
+.searchBar input {
+  height: 70px;
+}
+
 .results {
   margin-top: 5%;
-  margin-left: 33%;
+  margin-left: 36%;
   margin-right: 20%;
+}
+
+.gemBio h5 {
+  margin-top: 5%;
+  margin-left: 8%;
+
+}
+.gemBio h6 {
+  margin-left: 8%;
+  color: gray;
+
+}
+
+.searchList {
+  list-style: none;
+}
+
+.searchList a {
+  cursor: pointer;
+  padding: 1% 0% 0% 0%;
+}
+
+.searchList a:after {
+  content: url("star-gray.png");
+}
+
+.searchList a:hover:after,
+.searchList a.fav:after {
+  content: url("star-blue.png");
+}
+.searchList a.fav:hover:after {
+  content: url("star-blue.png");
+}
+
+//Favorites//
+
+
+.favPage {
+  margin-left: 33%;
+  padding: 10% 0% 0% 0%;
+}
+
+
+.list {
+  margin-top: 5%;
+}
+
+.favPage h2 {
+  margin-left: 3.5%;
+}
+
+.list li {
+  cursor: pointer;
+  list-style: none;
+  padding: 1% 0% 0% 0%;
+
+}
+
+.list li:before {
+  content: url("star-gray.png");
+}
+
+.list li:hover:before,
+.list li.fav:before {
+  content: url("star-blue.png");
+}
+.list li.fav:hover:before {
+  content: url("star-blue.png");
 }

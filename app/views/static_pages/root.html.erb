@@ -1,6 +1,7 @@
 <%= render "sidenav" %>
 <div class="searchPage">
   <h2>Search Gems</h2>
+  <br><br>
   <div class="searchBar">
     <%= form_tag(searches_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search", class: "round" %>
@@ -16,3 +17,7 @@
     <%= render "noGems" %>
   <% end %>
 <% end  %>
+
+<ul class="list">
+  <li id="placeholder"></li>
+</ul>

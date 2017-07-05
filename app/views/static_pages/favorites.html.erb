@@ -1,6 +1,14 @@
 <%= render "sidenav" %>
-<div class="searchPage">
-  <h2>Favorites</h2>
-  <h5>Your Favorite Gems </h5>
-  <h5>loop through favorited gems here, if none deafult "none"ERB </h5>
+<div class="favPage">
+  <h2>Your Favorite Gems</h2>
+  <ul class="list">
+    <li id="rails" class="fav selectable">rails</li>
+    <li id="bcrypt" class="selectable">bcrypt</li>
+    <li>
+      <a
+      href="https://rubygems.org/gems/<%= @name%>"
+      id="<%= @name%>" class="selectable"> <%= @name %>
+    </a>
+  </li>
+  </ul>
 </div>
